@@ -4,7 +4,7 @@
 <a name="overview" />
 ## Overview ##
 
-
+Note: For ESP8266 PWM signal range is 0-1024
 **RGBLED** is an Arduino library for controlling four pin RGB LEDs.
 
 It supports both Common Anode and Common Cathode RGB LEDs and has basic functions for showing specific RGB values, random values, and for displaying a "Hue, Saturation, Value" (HSV) color wheel.
