@@ -43,16 +43,16 @@ void RGBLED::turnOff() {
 }
 
 void RGBLED::writeRandom() {
-	int r = random(0,255);
-	int g = random(0,255);
-	int b = random(0,255);
+	int r = random(0,1024);
+	int g = random(0,1024);
+	int b = random(0,1024);
 
 	writeRGB(r,g,b);
 }
 
 int RGBLED::mapValue(int value) {
-	value = (value < 0) ? 0 : (value > 255) ? 255 : value;
-	value = (commonType == COMMON_ANODE) ? 255-value : value;
+	value = (value < 0) ? 0 : (value > 1024) ? 1024 : value;
+	value = (commonType == COMMON_ANODE) ? 1024-value : value;
 	return value;
 }
 
@@ -110,10 +110,10 @@ void RGBLED::writeHSV(int h, double s, double v) {
     break;
   }
 
-  //set each component to a integer value between 0 and 255
-  int red=constrain((int)255*r,0,255);
-  int green=constrain((int)255*g,0,255);
-  int blue=constrain((int)255*b,0,255);
+  //set each component to a integer value between 0 and 1024
+  int red=constrain((int)1024*r,0,1024);
+  int green=constrain((int)1024*g,0,1024);
+  int blue=constrain((int)1024*b,0,1024);
 
   writeRGB(red,green,blue);
 }
